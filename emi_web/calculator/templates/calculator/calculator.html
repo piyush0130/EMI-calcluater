@@ -61,11 +61,13 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- Use container-fluid on mobile, but keep container on larger screens -->
+    <div class="container py-4 px-3 px-md-4">
       <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
+        <!-- Make the card span the full width on very small screens, 10 columns on tablets, and 6 on desktops -->
+        <div class="col-12 col-md-10 col-lg-6">
           <div class="calculator-card">
-            <h2 class="text-center mb-4 text-primary">EMI Calculator</h2>
+            <h2 class="text-center mb-4 text-primary fs-3 fw-bold">EMI Calculator</h2>
 
             {% if error %}
             <div class="alert alert-danger" role="alert">{{ error }}</div>
@@ -75,10 +77,10 @@
               {% csrf_token %}
 
               <div class="mb-3">
-                <label for="price" class="form-label">Total Price (₹)</label>
+                <label for="price" class="form-label fw-semibold">Total Price (₹)</label>
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control form-control-lg"
                   id="price"
                   name="price"
                   required
@@ -89,12 +91,12 @@
               </div>
 
               <div class="mb-3">
-                <label for="downpayment" class="form-label"
+                <label for="downpayment" class="form-label fw-semibold"
                   >Downpayment (₹)</label
                 >
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control form-control-lg"
                   id="downpayment"
                   name="downpayment"
                   required
@@ -105,12 +107,12 @@
               </div>
 
               <div class="mb-3">
-                <label for="interest_rate" class="form-label"
+                <label for="interest_rate" class="form-label fw-semibold"
                   >Annual Interest Rate (%)</label
                 >
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control form-control-lg"
                   id="interest_rate"
                   name="interest_rate"
                   required
@@ -121,12 +123,12 @@
               </div>
 
               <div class="mb-3">
-                <label for="months" class="form-label"
+                <label for="months" class="form-label fw-semibold"
                   >Loan Tenure (Months)</label
                 >
                 <input
                   type="number"
-                  class="form-control"
+                  class="form-control form-control-lg"
                   id="months"
                   name="months"
                   required
@@ -136,44 +138,44 @@
                 />
               </div>
 
-              <div class="d-grid mt-4">
-                <button type="submit" class="btn btn-primary btn-lg">
+              <div class="d-grid mt-4 pt-2">
+                <button type="submit" class="btn btn-primary btn-lg fw-bold shadow-sm">
                   Calculate EMI
                 </button>
               </div>
             </form>
 
             {% if result %}
-            <div class="result-card">
-              <h4 class="text-center mb-3">Calculation Results</h4>
+            <div class="result-card shadow-sm mt-4">
+              <h4 class="text-center mb-4 text-dark bg-white py-2 rounded shadow-sm">Calculation Results</h4>
 
-              <div class="result-item">
-                <span>Loan Amount (Principal):</span>
-                <span class="result-value">₹{{ principal|floatformat:2 }}</span>
+              <div class="result-item flex-column flex-sm-row">
+                <span class="mb-1 mb-sm-0 text-muted">Loan Amount (Principal):</span>
+                <span class="result-value fs-5">₹{{ principal|floatformat:2 }}</span>
               </div>
 
-              <div class="result-item">
-                <span>Monthly EMI:</span>
-                <span class="result-value">₹{{ emi|floatformat:2 }}</span>
+              <div class="result-item flex-column flex-sm-row">
+                <span class="mb-1 mb-sm-0 text-muted">Monthly EMI:</span>
+                <span class="result-value fs-5">₹{{ emi|floatformat:2 }}</span>
               </div>
 
-              <div class="result-item">
-                <span>Total Interest Payable:</span>
-                <span class="result-value"
+              <div class="result-item flex-column flex-sm-row">
+                <span class="mb-1 mb-sm-0 text-muted">Total Interest Payable:</span>
+                <span class="result-value fs-5"
                   >₹{{ total_interest|floatformat:2 }}</span
                 >
               </div>
 
-              <div class="result-item">
-                <span>Total Amount to Pay:</span>
-                <span class="result-value"
+              <div class="result-item flex-column flex-sm-row">
+                <span class="mb-1 mb-sm-0 text-muted">Total Amount to Pay:</span>
+                <span class="result-value fs-5"
                   >₹{{ total_payment|floatformat:2 }}</span
                 >
               </div>
 
-              <div class="result-item border-0">
-                <span>Overall Cost (Price + Interest):</span>
-                <span class="result-value text-success"
+              <div class="result-item border-0 flex-column flex-sm-row pt-2 mt-2 border-top">
+                <span class="mb-1 mb-sm-0 fw-bold">Overall Cost <small class="text-muted fw-normal">(Price + Interest)</small>:</span>
+                <span class="result-value text-success fs-4 fw-bolder"
                   >₹{{ overall_cost|floatformat:2 }}</span
                 >
               </div>
