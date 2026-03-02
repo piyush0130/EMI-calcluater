@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ng+80-y5x=38j4dm%-my)p6$6_(otv3wxsc%%4ng$j7e6-k6!k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['emi-calcluater-1.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -116,4 +116,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
