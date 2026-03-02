@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import path
+from . import views
+from . import verification_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('calculator.urls')),
      path('robots.txt', verification_views.robots_txt_view, name='robots_txt'),
 ]
+
 
