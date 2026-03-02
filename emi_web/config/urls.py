@@ -20,4 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('calculator.urls')),
+     path('robots.txt', verification_views.robots_txt_view, name='robots_txt'),
 ]
+
