@@ -5,18 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Primary Meta Tags -->
-    <title>Free Online EMI Calculator | Home, Car & Personal Loans</title>
-    <meta name="title" content="Free Online EMI Calculator | Home, Car & Personal Loans">
-    <meta name="description" content="Calculate your Equated Monthly Installment (EMI) for home loans, car loans, and personal loans instantly. Easy, free, and accurate EMI calculation.">
-    <meta name="keywords" content="EMI calculator, loan calculator, calculate EMI, home loan calculator, car loan emi, personal loan emi online, interest rate calculator">
+    <title>EMI Calculator | Free Online Home, Car & Personal Loan EMI Check</title>
+    <meta name="title" content="EMI Calculator | Free Online Home, Car & Personal Loan EMI Check">
+    <meta name="description" content="Calculate your Equated Monthly Installment (EMI) instantly with our free online EMI calculator. Get accurate calculations for home loans, car loans, and personal loans including flat rate and reducing balance.">
+    <meta name="keywords" content="EMI calculator, loan calculator, calculate EMI online, home loan calculator, car loan emi, personal loan emi online, interest rate calculator, flat rate emi, reducing balance emi">
     <meta name="author" content="Piyush Nanda">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://emi-calcluater-1.onrender.com/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emi-calcluater-1.onrender.com/">
-    <meta property="og:title" content="Free Online EMI Calculator | Home, Car & Personal Loans">
-    <meta property="og:description" content="Calculate your Equated Monthly Installment (EMI) for home loans, car loans, and personal loans instantly. Easy, free, and accurate EMI calculation.">
+    <meta property="og:title" content="EMI Calculator | Free Online Home, Car & Personal Loan EMI Check">
+    <meta property="og:description" content="Calculate your Equated Monthly Installment (EMI) instantly with our free online EMI calculator. Get accurate calculations for home loans, car loans, and personal loans.">
+    <meta property="og:site_name" content="Free EMI Calculator">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emi-calcluater-1.onrender.com/">
+    <meta property="twitter:title" content="EMI Calculator | Free Online Home, Car & Personal Loan EMI Check">
+    <meta property="twitter:description" content="Calculate your Equated Monthly Installment (EMI) instantly with our free online EMI calculator. Get accurate calculations for home loans, car loans, and personal loans.">
+
+    <!-- Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free Online EMI Calculator",
+      "url": "https://emi-calcluater-1.onrender.com/",
+      "description": "Calculate your Equated Monthly Installment (EMI) for home loans, car loans, and personal loans instantly. Supports both flat rate and reducing balance methods.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -61,13 +89,12 @@
     </style>
   </head>
   <body>
-    <!-- Use container-fluid on mobile, but keep container on larger screens -->
-    <div class="container py-4 px-3 px-md-4">
+    <main class="container py-4 px-3 px-md-4">
       <div class="row justify-content-center">
         <!-- Make the card span the full width on very small screens, 10 columns on tablets, and 6 on desktops -->
         <div class="col-12 col-md-10 col-lg-6">
           <div class="calculator-card">
-            <h2 class="text-center mb-4 text-primary fs-3 fw-bold">EMI Calculator</h2>
+            <h1 class="text-center mb-4 text-primary fs-3 fw-bold">Online EMI Calculator</h1>
 
             {% if error %}
             <div class="alert alert-danger" role="alert">{{ error }}</div>
@@ -202,19 +229,28 @@
       </div>
       
       <!-- SEO Friendly Content Section -->
-      <div class="row justify-content-center">
+      <section class="row justify-content-center" aria-label="EMI Information">
         <div class="col-md-8 col-lg-6">
-            <div class="seo-content">
+            <article class="seo-content">
                 <h2 class="fs-4">What is an EMI?</h2>
-                <p class="text-muted small">Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are used to pay off both interest and principal each month so that over a specified number of years, the loan is paid off in full.</p>
+                <p class="text-muted small">An Equated Monthly Installment (<strong>EMI</strong>) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are used to pay off both interest and principal each month so that over a specified number of years, the loan is paid off in full. By using an online EMI calculator, borrowers can easily plan their monthly budgets.</p>
                 
-                <h2 class="fs-4 mt-4">How does the EMI Calculator work?</h2>
-                <p class="text-muted small">This free calculator helps you find the EMI for home loans, car loans, or personal loans. It uses the mathematical formula: <strong>E = P x R x (1+R)^N / [(1+R)^N-1]</strong>. Simply enter your total loan amount or product price, the downpayment you are making, your annual bank interest rate, and the duration of the loan in months to get accurate results instantly.</p>
-            </div>
+                <h2 class="fs-4 mt-4">How does the Loan EMI Calculator work?</h2>
+                <p class="text-muted small">Our fast and free EMI calculator helps you find the monthly repayment amount for <strong>home loans</strong>, <strong>car loans</strong>, or <strong>personal loans</strong>. 
+                For reducing balance calculation, it uses the mathematical formula: <strong>E = P x R x (1+R)^N / [(1+R)^N-1]</strong>. 
+                We also offer a <strong>Flat Rate</strong> calculation method commonly used in some auto loans and personal loans. Simply enter your total loan amount or product price, the downpayment you are making, your annual bank interest rate, and the duration of the loan in months to get accurate results instantly.</p>
+                
+                <h2 class="fs-4 mt-4">Benefits of using an EMI Calculator</h2>
+                <ul class="text-muted small">
+                  <li><strong>Financial Planning:</strong> Know your exact monthly payout before committing to a loan.</li>
+                  <li><strong>Compare Options:</strong> Easily adjust tenure and interest rates to see which loan offer is best for you.</li>
+                  <li><strong>Accuracy:</strong> Avoid manual calculation errors with our automated tool.</li>
+                </ul>
+            </article>
         </div>
-      </div>
+      </section>
       
-    </div>
+    </main>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
